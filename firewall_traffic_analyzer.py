@@ -25,9 +25,9 @@ def traffic_analyzer():
     print('\nFIREWALL LOG:')
     print(f'Port: {port}, Transfer Size: {file_size_mb} MB')
 
-    if (port == 22 or port == 3389) and file_size_mb > 100:
+    if (port == 22 or port == 3389) and file_size_mb >= 100:
         print('Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!')
-    elif port == 80 and file_size_mb >= 100:
+    elif port == 80 and file_size_mb > 100:
         print('Risk Assessment: MEDIUM RISK: Large unencrypted data transfer detected.')
     elif port == 443:
         print('Risk Assessment: LOW RISK: Secure encrypted transfer detected.')
@@ -120,3 +120,4 @@ This would have helped with the last lab also.
 
 
 '''
+
